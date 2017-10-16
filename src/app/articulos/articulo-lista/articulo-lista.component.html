@@ -1,0 +1,5 @@
+<ul class="list-group hover">
+    <li class="list-group-item" *ngFor="let articulo of articulolista" (click)="onItemClick(articulo)">
+      {{articulo.nombre}} - {{articulo.monto}}
+    </li>
+  </ul>

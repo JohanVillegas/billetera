@@ -1,0 +1,29 @@
+<form #articuloForm="ngForm" (ngSubmit) = "onSubmit(articuloForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="articuloService.selectedArticulo.$key">      
+  <div class="form-group">
+      <label>Nombre</label>
+      <input class="form-control" name="nombre" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.nombre" placeholder="Nombre del Articulo" required>
+  </div>
+
+  <div class="form-group">
+      <label>Monto</label>
+      <input class="form-control" name="monto" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.monto" placeholder="Monto del Articulo">
+  </div>
+
+  <div class="form-group">
+      <label>Categoria</label>
+      <input class="form-control" name="categoria" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.categoria" placeholder="Categoria del Articulo">
+  </div>
+  
+  <div class="form-group">
+      <label>Fecha</label>
+      <input class="form-control" name="fecha" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.fecha" placeholder="Fecha del Articulo">
+  </div>
+
+  <button type="submit" class="btn btn-default"  [disabled]="!articuloForm.valid">
+      <i class="fa fa-floppy-o"></i> Guardar </button>
+  <button type="button" class="btn btn-default"  *ngIf="articuloService.selectedArticulo.$key!=null" (click)="onDelete(articuloForm)">
+      <i class="fa fa-trash"></i> Eliminar </button>
+  <button type="button" class="btn btn-default" (click)="resetForm(articuloForm)">
+      <i class="fa fa-repeat"></i> Reiniciar </button>
+</form>
