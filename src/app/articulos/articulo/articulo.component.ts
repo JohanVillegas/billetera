@@ -31,6 +31,7 @@ export class ArticuloComponent implements OnInit {
       $key : null,
       nombre : '',
       monto : 0,
+      movimiento : false,
       categoria : '',
       fecha : '',
     }

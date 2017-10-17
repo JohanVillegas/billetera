@@ -1,7 +1,9 @@
 export class Articulo {
-    $key      : string;
-    nombre    : string;
-    monto     : number;
-    categoria : string;
-    fecha     : string;
+    $key       : string;
+    nombre     : string;
+    movimiento : boolean;
+    monto      : number;
+    categoria  : string;
+    fecha      : string;
+
 }

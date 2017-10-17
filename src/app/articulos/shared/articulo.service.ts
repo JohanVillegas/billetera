@@ -18,6 +18,7 @@ export class ArticuloService {
     this.articuloLista.push({
       nombre    : articulo.nombre,
       monto     : articulo.monto,
+      movimiento : articulo.movimiento,
       categoria : articulo.categoria,
       fecha     : articulo.fecha
     });
@@ -27,6 +28,7 @@ export class ArticuloService {
      this.articuloLista.update(articulo.$key,{
       nombre : articulo.nombre,
       monto : articulo.monto,
+      movimiento : articulo.movimiento,
       categoria : articulo.categoria,
       fecha : articulo.fecha
      })

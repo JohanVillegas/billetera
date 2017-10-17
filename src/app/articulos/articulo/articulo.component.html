@@ -1,29 +1,49 @@
-<form #articuloForm="ngForm" (ngSubmit) = "onSubmit(articuloForm)">
-  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="articuloService.selectedArticulo.$key">      
-  <div class="form-group">
-      <label>Nombre</label>
-      <input class="form-control" name="nombre" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.nombre" placeholder="Nombre del Articulo" required>
-  </div>
+<form #articuloForm="ngForm" (ngSubmit)="onSubmit(articuloForm)">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="articuloService.selectedArticulo.$key">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input class="form-control" name="nombre" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.nombre" placeholder="Nombre del Articulo"
+            required>
+    </div>
 
-  <div class="form-group">
-      <label>Monto</label>
-      <input class="form-control" name="monto" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.monto" placeholder="Monto del Articulo">
-  </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-7">
+                <label>Monto</label>
+                <label class="sr-only" for="inlineFormInputGroup">0</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">RD$</div>
+                    <input class="form-control" name="monto" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.monto" id="inlineFormInputGroup"
+                        placeholder="Monto del Articulo">
+                </div>
+            </div>
 
-  <div class="form-group">
-      <label>Categoria</label>
-      <input class="form-control" name="categoria" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.categoria" placeholder="Categoria del Articulo">
-  </div>
-  
-  <div class="form-group">
-      <label>Fecha</label>
-      <input class="form-control" name="fecha" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.fecha" placeholder="Fecha del Articulo">
-  </div>
+            <div class="col-md-5">
+                <label>Movimiento</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input name="movimiento" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.movimiento" type="checkbox" class="form-check-input"
+                        /> Ingreso
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <button type="submit" class="btn btn-default"  [disabled]="!articuloForm.valid">
-      <i class="fa fa-floppy-o"></i> Guardar </button>
-  <button type="button" class="btn btn-default"  *ngIf="articuloService.selectedArticulo.$key!=null" (click)="onDelete(articuloForm)">
-      <i class="fa fa-trash"></i> Eliminar </button>
-  <button type="button" class="btn btn-default" (click)="resetForm(articuloForm)">
-      <i class="fa fa-repeat"></i> Reiniciar </button>
+    <div class="form-group">
+        <label>Categoria</label>
+        <input class="form-control" name="categoria" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.categoria" placeholder="Categoria del Articulo">
+    </div>
+
+    <div class="form-group">
+        <label>Fecha</label>
+        <input class="form-control" type="date" id="example-date-input" name="fecha" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.fecha" placeholder="Fecha del Articulo">
+    </div>
+
+    <button type="submit" class="btn btn-default" [disabled]="!articuloForm.valid">
+        <i class="fa fa-floppy-o"></i> Guardar </button>
+    <button type="button" class="btn btn-default" *ngIf="articuloService.selectedArticulo.$key!=null" (click)="onDelete(articuloForm)">
+        <i class="fa fa-trash"></i> Eliminar </button>
+    <button type="button" class="btn btn-default" (click)="resetForm(articuloForm)">
+        <i class="fa fa-repeat"></i> Reiniciar </button>
 </form>
