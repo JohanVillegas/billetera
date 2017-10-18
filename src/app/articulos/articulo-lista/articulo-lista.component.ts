@@ -28,6 +28,14 @@ export class ArticuloListaComponent implements OnInit {
 
   onItemClick(art : Articulo){
     this.articuloService.selectedArticulo = Object.assign({},art);
+    this.getStyle(art);
   }
 
+  getStyle(art : Articulo) {
+    if (art.$key === this.articuloService.selectedArticulo.$key) {
+        return "bisque";
+    } else {
+        return "";
+    }
+}
 }

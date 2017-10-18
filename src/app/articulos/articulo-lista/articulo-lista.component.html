@@ -1,8 +1,16 @@
 <label>Lista de Movimientos</label>
-<ul class="list-group hover">
-  <li class="list-group-item" *ngFor="let articulo of articulolista" (click)="onItemClick(articulo)">
+<ul class="list-group hover" style="width: auto; height: 349px; overflow: auto">
+  <li class="list-group-item" *ngFor="let articulo of articulolista" (click)="onItemClick(articulo)"  [style.background-color]="getStyle(articulo)">
+
       <i class="fa" [class.fa-chevron-circle-down]='articulo.movimiento==false' [class.fa-chevron-circle-up]='articulo.movimiento==true'
-      [style.color]="articulo.movimiento ? '#63dcb3' : '#ff7f7f'" style="font-size: xx-large; vertical-align: bottom;"></i>
-  <span style="vertical-align: super;"> {{articulo.nombre}} - {{articulo.monto}} </span>
+      [style.color]="articulo.movimiento ? '#63dcb3' : '#ff7f7f'" style="font-size: xx-large; vertical-align: middle; margin-right: 2px;"></i>
+      
+      <h6 style="display: inline; vertical-align: inherit;">{{articulo.nombre}}</h6> 
+      <p style="    vertical-align: super; display: inline;"></p> 
+          <div class="input-group-addon" style="display: initial;
+          vertical-align: super;
+          float: right;
+          border-radius: 10em;">{{articulo.monto}} RD$</div>
+
   </li>
 </ul>

@@ -7,3 +7,22 @@ button:hover,ul.list-group.hover li:hover{
     cursor: pointer;
     background-color:bisque;
 }
+
+.list-group-item {
+margin-bottom: 5px;
+padding-bottom: 7px;
+padding-top: 7px;
+}
+
+ul::-webkit-scrollbar {
+    width: 0.3em;
+}
+ 
+ul::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+ul::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
