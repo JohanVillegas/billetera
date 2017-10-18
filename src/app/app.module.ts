@@ -10,12 +10,14 @@ import { ArticulosComponent } from './articulos/articulos.component';
 import { ArticuloComponent } from './articulos/articulo/articulo.component';
 import { ArticuloListaComponent } from './articulos/articulo-lista/articulo-lista.component';
 import { environment } from "../environments/environment";
+import { ArticulosKpiComponent } from './articulos/articulos-kpi/articulos-kpi.component';
 @NgModule({
   declarations: [
     AppComponent,
     ArticulosComponent,
     ArticuloComponent,
-    ArticuloListaComponent
+    ArticuloListaComponent,
+    ArticulosKpiComponent
   ],
   imports: [
     BrowserModule,
