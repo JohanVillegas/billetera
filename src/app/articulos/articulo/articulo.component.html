@@ -1,5 +1,7 @@
 <form #articuloForm="ngForm" (ngSubmit)="onSubmit(articuloForm)">
+
     <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="articuloService.selectedArticulo.$key">
+
     <div class="form-group">
         <label>Nombre</label>
         <input class="form-control" name="nombre" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.nombre" placeholder="Nombre del Articulo"
@@ -21,9 +23,17 @@
             <div class="col-md-5">
                 <label>Movimiento</label>
                 <div class="form-check">
-                    <label class="form-check-label">
-                        <input name="movimiento" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.movimiento" type="checkbox" class="form-check-input"/> Ingreso
-                    </label>
+                        <label class="tgl">
+                                <input name="movimiento" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.movimiento" type="checkbox" class="form-check-input"/>
+                            <span class="tgl_body">
+                                <span class="tgl_switch"></span>
+                                <span class="tgl_track">
+                                    <span class="tgl_bgd"></span>
+                                    <span class="tgl_bgd tgl_bgd-negative"></span>
+                                </span>
+                            </span>
+                        </label>
+                        <p style = "display: initial; vertical-align: super;">Ingreso</p>
                 </div>
             </div>
         </div>
@@ -36,13 +46,17 @@
 
     <div class="form-group">
         <label>Fecha</label>
-        <input class="form-control" type="date" id="example-date-input" name="fecha" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.fecha" placeholder="Fecha del Articulo">
+        <input class="form-control" type="date" id="example-date-input" name="fecha" #name="ngModel" [(ngModel)]="articuloService.selectedArticulo.fecha">
     </div>
 
     <button type="submit" class="btn btn-default" [disabled]="!articuloForm.valid">
-        <i class="fa fa-floppy-o"></i> Guardar </button>
+        <i class="fa fa-floppy-o"></i> Guardar 
+    </button>
     <button type="button" class="btn btn-default" *ngIf="articuloService.selectedArticulo.$key!=null" (click)="onDelete(articuloForm)">
-        <i class="fa fa-trash"></i> Eliminar </button>
-    <button type="button" class="btn btn-default" (click)="resetForm(articuloForm)">
-        <i class="fa fa-repeat"></i> Reiniciar </button>
+        <i class="fa fa-trash"></i> Eliminar 
+    </button>
+    <button type="button" class="btn btn-default" (click)="resetForm()">
+        <i class="fa fa-repeat"></i> Reiniciar
+    </button>
+
 </form>

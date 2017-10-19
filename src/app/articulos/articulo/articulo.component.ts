@@ -6,7 +6,7 @@ import { ArticuloService } from "../shared/articulo.service";
 @Component({
   selector: 'app-articulo',
   templateUrl: './articulo.component.html',
-  styleUrls: ['./articulo.component.css']
+  styleUrls: ['./articulo.component.css'],
 })
 export class ArticuloComponent implements OnInit {
 
@@ -24,20 +24,22 @@ export class ArticuloComponent implements OnInit {
      this.articuloService.insertArticulo(form.value);
     else
      this.articuloService.updateArticulo(form.value)
-    this.resetForm(form);
+    this.resetForm();
   }
 
   resetForm(form? : NgForm){
-    if (form != null) 
+    if (form != null) {
       form.reset();
+    }
     this.articuloService.selectedArticulo = {
       $key : null,
       nombre : '',
       monto : 0,
       movimiento : false,
       categoria : '',
-      fecha : '',
+      fecha : this.getDate(),
     }
+    
   }
 
   onDelete(form : NgForm){
@@ -46,5 +48,10 @@ export class ArticuloComponent implements OnInit {
         this.articuloService.deleteArticulo(form.value.$key);
         this.resetForm(form);
       }
+  }
+
+  getDate(){
+   let myDate = new Date();   ///'2017-10-15';
+   return myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
   }
 }
