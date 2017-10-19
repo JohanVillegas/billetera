@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {  NgForm } from "@angular/forms";
+import {  NgForm } from '@angular/forms';
 
-import { ArticuloService } from "../shared/articulo.service";
+import { ArticuloService } from '../shared/articulo.service';
 
 @Component({
   selector: 'app-articulo',
@@ -10,7 +10,7 @@ import { ArticuloService } from "../shared/articulo.service";
 })
 export class ArticuloComponent implements OnInit {
 
-  constructor(private articuloService : ArticuloService) { }
+  constructor(public articuloService : ArticuloService) { }
 
   ngOnInit() {
     this.resetForm();
