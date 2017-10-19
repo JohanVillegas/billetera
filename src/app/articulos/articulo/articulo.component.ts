@@ -17,6 +17,9 @@ export class ArticuloComponent implements OnInit {
   }
 
   onSubmit(form : NgForm) {
+    if(form.value.movimiento == null)
+    form.value.movimiento = false;
+
     if(form.value.$key == null)
      this.articuloService.insertArticulo(form.value);
     else
@@ -25,7 +28,7 @@ export class ArticuloComponent implements OnInit {
   }
 
   resetForm(form? : NgForm){
-    if (form != null)
+    if (form != null) 
       form.reset();
     this.articuloService.selectedArticulo = {
       $key : null,

@@ -1,12 +1,24 @@
 <hr>
 <div class="row">
-<div class="col-md-2"><h2 style="text-align: center;">{{ingreso}}</h2></div>
-<div class="col-md-1"></div>
-<div class="col-md-1"><h2 style="text-align: center;">-</h2></div>
-<div class="col-md-1"></div>
-<div class="col-md-2"><h2 style="text-align: center;">{{egreso}}</h2></div>
-<div class="col-md-1"></div>
-<div class="col-md-1"><h2 style="text-align: center;">=</h2></div>
-<div class="col-md-1"></div>
-<div class="col-md-2"><h2 style="text-align: center;">{{restante}}</h2></div>
+    <div class="col-md-3">
+        <div class="input-group-addon" style=" display: block;">
+            <h2 style="text-align:center; ">{{ingreso | number : '1.0'}} RD$</h2>
+        </div>
+    </div>
+
+    <div class="col-md-1"><h1 style="text-align: center;">-</h1></div>
+
+    <div class="col-md-3">
+        <div class="input-group-addon" style=" display: block;">
+                <h2 style="text-align:center; ">{{egreso | number : '1.0'}} RD$</h2>
+        </div>
+    </div>
+
+    <div class="col-md-1"><h1 style="text-align: center;">=</h1></div>
+
+    <div class="col-md-3">
+        <div class="input-group-addon" style=" display: block;">
+                <h2 style="text-align:center; ">{{restante | number : '1.0'}} RD$</h2>
+        </div>
+    </div>
 </div>
