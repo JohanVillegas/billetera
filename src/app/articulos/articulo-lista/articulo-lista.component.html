@@ -1,6 +1,6 @@
 <label>Lista de Movimientos</label>
 <ul class="list-group hover" style="width: auto; height: 349px; overflow: auto">
-  <li class="list-group-item" *ngFor="let articulo of articulolista?.reverse()" (click)="onItemClick(articulo)"  [style.background-color]="getStyle(articulo)">
+  <li class="list-group-item" *ngFor="let articulo of articulolista | orderBy: '$key':true" (click)="onItemClick(articulo)"  [style.background-color]="getStyle(articulo)">
 
       <i class="fa" [class.fa-chevron-circle-down]='articulo.movimiento==false' [class.fa-chevron-circle-up]='articulo.movimiento==true'
       [style.color]="articulo.movimiento ? '#63dcb3' : '#ff7f7f'" style="font-size: xx-large; vertical-align: middle; margin-right: 2px;"></i>
