@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase,AngularFireList } from 'angularfire2/database';
 
 import { Articulo } from './articulo.model';
+import { map } from 'rxjs/operator/map';
 
 @Injectable()
 export class ArticuloService {
@@ -10,8 +11,8 @@ export class ArticuloService {
   constructor(private firebase : AngularFireDatabase) { }
 
   getData(){
-    this.articuloLista = this.firebase.list('articulos');
-    return this.articuloLista;
+    this.articuloLista = this.firebase.list('articulos', ref => ref.orderByKey());
+        return this.articuloLista;
   }
 
   insertArticulo(articulo: Articulo){
