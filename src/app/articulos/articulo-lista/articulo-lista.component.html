@@ -1,6 +1,6 @@
 <label>Lista de Movimientos</label>
 <ul class="list-group hover" style="width: auto; height: 349px; overflow: auto">
-  <li class="list-group-item" *ngFor="let articulo of articulolista.reverse()" (click)="onItemClick(articulo)"  [style.background-color]="getStyle(articulo)">
+  <li class="list-group-item" *ngFor="let articulo of articulolista?.reverse()" (click)="onItemClick(articulo)"  [style.background-color]="getStyle(articulo)">
 
       <i class="fa" [class.fa-chevron-circle-down]='articulo.movimiento==false' [class.fa-chevron-circle-up]='articulo.movimiento==true'
       [style.color]="articulo.movimiento ? '#63dcb3' : '#ff7f7f'" style="font-size: xx-large; vertical-align: middle; margin-right: 2px;"></i>
@@ -10,7 +10,9 @@
           <div class="input-group-addon" style="display: initial;
           vertical-align: super;
           float: right;
-          border-radius: 10em;">{{articulo.monto | number : '1.0'}} RD$</div>
+          border-radius: 10em;">{{articulo.monto | number : '1.0'}} 
+          <p style="display: inline;vertical-align: text-top; font-size: 0.7rem; color: #9fa2a2;">RD$</p>
+        </div>
 
   </li>
 </ul>
