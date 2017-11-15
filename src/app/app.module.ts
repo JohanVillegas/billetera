@@ -20,6 +20,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { AutorizacionService } from './services/autorizacion.service';
 import { GuardService } from './services/guard.service';
 const appRoutes: Routes = [
+  {path:'', component: LoginComponent},
   {path:'articulos', component: ArticulosComponent},
   {path:'login',component: LoginComponent},
   {path:'registros',component: RegistroComponent, canActivate:[GuardService]}
