@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-md-4 col-md-4">
+      <div class="card card-body bg-light">
+        <label>Email</label>
+        <input type="email" class="form-control" [(ngModel)]="loginParams.email"/>
+        <br/>
+        <label>Contraseña</label>
+        <input type="password" class="form-control" [(ngModel)]="loginParams.password" />
+        <hr>
+        <a class="btn btn-primary btn-block"(click)="login()">Login</a>
+        <a class="btn btn-secondary btn-block">Cancelar</a>
+      </div>
+    </div>
+  </div>
+</div>
